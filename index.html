@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google" value="notranslate">
+  <title></title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+    crossorigin="anonymous"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+  <header id="primary-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#!">PHP HTTP Demo</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!--  ========================================================================
+                                    main
+  ========================================================================== -->
+
+
+  <main class="py-5">
+    <div class="container-fluid px-5">
+
+
+      <article class="article">
+        <h2 class="fancy-h2 mb-5">Overview:</h2>
+
+
+        <div class="d-flex justify-content-evenly flex-wrap mb-5">
+          <button id="get-data-button" class="btn btn-outline-primary btn-sm mb-3 rounded-pill">
+            <span class="font-monospace">GET</span> Data
+          </button>
+
+          <button id="post-data-button" class="btn btn-outline-primary btn-sm mb-3 rounded-pill">
+            <span class="font-monospace">POST</span> Data
+          </button>
+
+          <button id="put-data-button" class="btn btn-outline-primary btn-sm mb-3 rounded-pill">
+            <span class="font-monospace">PUT</span> Data
+          </button>
+
+          <button id="patch-data-button" class="btn btn-outline-primary btn-sm mb-3 rounded-pill">
+            <span class="font-monospace">PATCH</span> Data
+          </button>
+
+          <button id="delete-data-button" class="btn btn-outline-primary btn-sm mb-3 rounded-pill">
+            <span class="font-monospace">DELETE</span> Data
+          </button>
+        </div>
+
+
+        <p class="text-primary">Note: GitHub blocks PHP. I put this demo page up all the same just so the overview could be read.</p>
+
+
+        <p>PHP responds differently to HTTP requests based on the type of request sent
+        (<code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>,
+        <code>DELETE</code>, etc.) as well as the format in which the data is sent:</p>
+
+
+
+        <ul class="mb-5 child-mb-3">
+          <li>JSON: <code>"application/json"</code></li>
+
+          <li>FormData: <code>"multipart/form-data"</code></li>
+
+          <li>Query String: <code>"application/x-www-form-urlencoded"</code></li>
+        </ul>
+
+
+         <p>Consequently, receiving data in PHP has to be handled differently in each case.<p>
+
+
+         <p>For <code>POST</code>s, JSON must be handled differently than <code>FormData</code>
+         and query strings. For <code>PUT</code>, <code>PATCH</code>, and
+         <code>DELETE</code> requests, each data format must be handled uniquely by
+         the PHP script. Ultimately, it's easier to just use <code>POST</code> requests
+         for updating and deleting data, but it's still good to know how to respond
+         to all possible scenarios.</p>
+
+
+         <p><strong>Note:</strong> If possible, using JSON is ideal for all request types.
+         The benefit of JSON is that it doesn't turn all values into strings.
+         Yes, it's stringified/parsed (encoded/decoded), but once that's done the value types
+         are intact. The other formats just turn everything into a string.</p>
+      </article>
+    </div><!-- <div class="container"> -->
+  </main>
+
+
+  <!--  ========================================================================
+
+  ========================================================================== -->
+
+
+  <!-- <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"
+  ></script> -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
